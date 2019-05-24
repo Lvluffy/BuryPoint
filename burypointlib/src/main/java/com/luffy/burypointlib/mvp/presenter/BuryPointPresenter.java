@@ -11,6 +11,7 @@ import com.luffy.networklib.mvp.BaseLayerPresenter;
 import com.luffy.utilslib.utils.AppUtils;
 import com.luffy.utilslib.utils.ChannelUtils;
 import com.luffy.utilslib.utils.DeviceUtils;
+import com.luffy.utilslib.utils.ValidUtils;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -36,7 +37,7 @@ public class BuryPointPresenter extends BaseLayerPresenter implements IBuryPoint
     @Override
     public void requestBuryPoint(Context mContext, String pft, String pfp, String uid, String ext) {
         String appname = AppUtils.getInstance().getAppName(mContext);
-        String cnid = ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL");
+        String cnid = ValidUtils.getInstance().isValid(ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL")) ? ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL") : "";
         String imei = DeviceUtils.getInstance().getImei(mContext);
         String imsi = DeviceUtils.getInstance().getImsi(mContext);
         String model = DeviceUtils.getInstance().getDeviceModel();
