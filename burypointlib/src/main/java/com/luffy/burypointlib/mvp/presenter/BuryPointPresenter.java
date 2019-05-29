@@ -34,18 +34,47 @@ public class BuryPointPresenter extends BaseLayerPresenter implements IBuryPoint
     }
 
     @Override
-    public void requestBuryPoint(Context mContext, String pft, String uid, String ext) {
-        String appname = AppUtils.getInstance().getAppName(mContext);
+    public void requestBuryPointGet(Context mContext, String pft, String uid, String ext) {
+        String appname = AppUtils.getInstance().getPackName(mContext);
         String cnid = ValidUtils.getInstance().isValid(ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL")) ? ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL") : "";
         String imei = DeviceUtils.getInstance().getImei(mContext);
         String imsi = DeviceUtils.getInstance().getImsi(mContext);
         String model = DeviceUtils.getInstance().getDeviceModel();
         String mac = DeviceUtils.getInstance().getMacAddress();
-        String platform = "Android " + Build.VERSION.SDK_INT;
+        String platform = "Android" + Build.VERSION.SDK_INT;
         String brand = DeviceUtils.getInstance().getDeviceBrand();
         String version = AppUtils.getInstance().getVersionName(mContext);
         ApiClientBuryPoint.getInstance().getApiService()
                 .getBuryPoint(appname,
+                        cnid,
+                        pft,
+                        uid,
+                        imei,
+                        imsi,
+                        model,
+                        mac,
+                        platform,
+                        brand,
+                        version,
+                        ext)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ApiObserverBuryPoint<BuryPointBean>());
+    }
+
+    @Override
+    public void requestBuryPointPost(Context mContext, String pft, String uid, String ext) {
+        String appname = AppUtils.getInstance().getPackName(mContext);
+        String cnid = ValidUtils.getInstance().isValid(ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL")) ? ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL") : "";
+        String imei = DeviceUtils.getInstance().getImei(mContext);
+        String imsi = DeviceUtils.getInstance().getImsi(mContext);
+        String model = DeviceUtils.getInstance().getDeviceModel();
+        String mac = DeviceUtils.getInstance().getMacAddress();
+        String platform = "Android" + Build.VERSION.SDK_INT;
+        String brand = DeviceUtils.getInstance().getDeviceBrand();
+        String version = AppUtils.getInstance().getVersionName(mContext);
+        ApiClientBuryPoint.getInstance().getApiService()
+                .postBuryPoint(appname,
                         cnid,
                         pft,
                         uid,

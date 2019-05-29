@@ -18,9 +18,22 @@ public interface IBuryPointContract {
          * @param uid      用户id
          * @param ext      扩展字端 (json格式)
          */
-        void requestBuryPoint(Context mContext,
-                              String pft,
-                              String uid,
-                              String ext);
+        void requestBuryPointGet(Context mContext,
+                                 String pft,
+                                 String uid,
+                                 String ext);
+
+        /**
+         * 请求
+         *
+         * @param mContext 上下问对象
+         * @param pft      大编号
+         * @param uid      用户id
+         * @param ext      扩展字端 (json格式)
+         */
+        void requestBuryPointPost(Context mContext,
+                                  String pft,
+                                  String uid,
+                                  String ext);
     }
 }
