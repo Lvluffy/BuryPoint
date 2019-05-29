@@ -20,7 +20,6 @@ public interface ApiServiceBuryPoint {
      * @param appname  app名称
      * @param cnid     app推广渠道
      * @param pft      大编号
-     * @param pfp      小编号
      * @param uid      用户id
      * @param imei     移动设备imei号
      * @param imsi     移动设备imsi号
@@ -37,7 +36,6 @@ public interface ApiServiceBuryPoint {
     Observable<BuryPointBean> getBuryPoint(@Field("appname") String appname,
                                            @Field("cnid") String cnid,
                                            @Field("pft") String pft,
-                                           @Field("pfp") String pfp,
                                            @Field("uid") String uid,
                                            @Field("imei") String imei,
                                            @Field("imsi") String imsi,

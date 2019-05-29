@@ -33,9 +33,8 @@ public class BuryPointPresenter extends BaseLayerPresenter implements IBuryPoint
 
     }
 
-
     @Override
-    public void requestBuryPoint(Context mContext, String pft, String pfp, String uid, String ext) {
+    public void requestBuryPoint(Context mContext, String pft, String uid, String ext) {
         String appname = AppUtils.getInstance().getAppName(mContext);
         String cnid = ValidUtils.getInstance().isValid(ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL")) ? ChannelUtils.getInstance().getAppMetaData(mContext, "BaiduMobAd_CHANNEL") : "";
         String imei = DeviceUtils.getInstance().getImei(mContext);
@@ -49,7 +48,6 @@ public class BuryPointPresenter extends BaseLayerPresenter implements IBuryPoint
                 .getBuryPoint(appname,
                         cnid,
                         pft,
-                        pfp,
                         uid,
                         imei,
                         imsi,

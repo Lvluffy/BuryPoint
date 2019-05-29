@@ -20,6 +20,6 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_report)
     public void onViewClicked() {
         BuryPointPresenter mBuryPointPresenter = new BuryPointPresenter();
-        mBuryPointPresenter.requestBuryPoint(this, "", "", "", "");
+        mBuryPointPresenter.requestBuryPoint(this, "", "", "");
     }
 }
