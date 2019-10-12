@@ -43,10 +43,10 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     /**support*/
-    compile "com.android.support:support-v4:$rootProject.supportVersion"
+    provided "com.android.support:support-v4:$rootProject.supportVersion"
     /**项目结构*/
-    /*网络框架*/
-    compile 'com.github.Lvluffy:network:1.0.2'
-    /*工具*/
-    compile 'com.github.Lvluffy:utils:1.2.9'
+    /*通用网络*/
+    provided 'com.github.Lvluffy:GeneralNetwork:1.0.0'
+    /*通用工具*/
+    provided 'com.github.Lvluffy:GeneralUtils:1.0.0'
 }

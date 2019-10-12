@@ -42,6 +42,10 @@ dependencies {
     /*butterknife*/
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    /*通用网络*/
+    compile 'com.github.Lvluffy:GeneralNetwork:1.0.0'
+    /*通用工具*/
+    compile 'com.github.Lvluffy:GeneralUtils:1.0.0'
     /**burypointlib*/
     compile project(':burypointlib')
 }

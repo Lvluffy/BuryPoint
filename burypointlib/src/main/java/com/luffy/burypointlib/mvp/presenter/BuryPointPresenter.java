@@ -7,11 +7,11 @@ import com.luffy.burypointlib.api.ApiClientBuryPoint;
 import com.luffy.burypointlib.api.ApiObserverBuryPoint;
 import com.luffy.burypointlib.mvp.contract.IBuryPointContract;
 import com.luffy.burypointlib.mvp.mode.BuryPointBean;
-import com.luffy.networklib.mvp.BaseLayerPresenter;
-import com.luffy.utilslib.utils.AppUtils;
-import com.luffy.utilslib.utils.ChannelUtils;
-import com.luffy.utilslib.utils.DeviceUtils;
-import com.luffy.utilslib.utils.ValidUtils;
+import com.luffy.generalnetworklib.mvp.BaseLayerPresenter;
+import com.luffy.generalutilslib.utils.AppUtils;
+import com.luffy.generalutilslib.utils.ChannelUtils;
+import com.luffy.generalutilslib.utils.DeviceUtils;
+import com.luffy.generalutilslib.utils.ValidUtils;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
