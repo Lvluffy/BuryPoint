@@ -10,22 +10,12 @@ import com.luffy.generalnetworklib.api.retrofit.BaseLayerApiObserver;
 public class ApiObserverBuryPoint<T> extends BaseLayerApiObserver<T> {
 
     @Override
-    public void completed() {
+    public void onObserverNext(T t) {
 
     }
 
     @Override
-    public void cacheNetworkData(T t) {
-
-    }
-
-    @Override
-    public void error(Throwable throwable) {
-
-    }
-
-    @Override
-    public void next(T t) {
+    public void onObserverError(Throwable e) {
 
     }
 }
