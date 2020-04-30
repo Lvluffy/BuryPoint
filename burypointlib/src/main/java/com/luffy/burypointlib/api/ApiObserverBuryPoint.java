@@ -1,6 +1,6 @@
 package com.luffy.burypointlib.api;
 
-import com.luffy.generalnetworklib.api.retrofit.BaseLayerApiObserver;
+import com.luffy.apilib.retrofit.BaseLayerApiObserver;
 
 /**
  * Created by lvlufei on 2018/11/3
